@@ -1,0 +1,3 @@
+node_modules
+src/assets/config/config.dev.js
+src/assets/config/config.prod-local.js
