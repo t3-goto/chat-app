@@ -11,8 +11,8 @@
     "build:client-app:prod": "npm run build --prefix client-app",
     "start:server-app:prod": "npm run start --prefix server-app",
     "build": "run-s install:server-app install:client-app build:client-app",
-    "install:server-app": "npm install --prefix server-app",
-    "install:client-app": "npm install --prefix client-app",
+    "install:server-app": "npm ci --prefix server-app",
+    "install:client-app": "npm ci --prefix client-app",
     "build:client-app": "npm run build --prefix client-app",
     "start": "cross-env NODE_ENV=production npm run start:server-app",
     "start:server-app": "npm run start --prefix server-app"
