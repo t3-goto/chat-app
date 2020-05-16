@@ -10,7 +10,6 @@
     "start:prod": "cross-env NODE_ENV=prod-local run-s build:client-app:prod start:server-app:prod",
     "build:client-app:prod": "npm run build --prefix client-app",
     "start:server-app:prod": "npm run start --prefix server-app",
-    "heroku-postbuild": "npm run build",
     "build": "run-s install:server-app install:client-app build:client-app",
     "install:server-app": "npm ci --prefix server-app",
     "install:client-app": "npm ci --prefix client-app",
