@@ -21,7 +21,7 @@ export class TestComponent implements OnInit {
   public message3: string;
   private loginBody: any;
   private token: string;
-  private message4: string;
+  public message4: string;
   private _loginForm: FormGroup;
   constructor(
     private httpClientService: HttpClientService,
