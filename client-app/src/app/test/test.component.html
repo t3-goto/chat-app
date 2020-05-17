@@ -1,0 +1,11 @@
+<p>test works!</p>
+{{ message1 }}
+{{ message2 }}
+{{ message3 }}
+
+<form [formGroup]="loginForm">
+  <input formControlName="email" />
+  <input formControlName="password" />
+  <button (click)="display()">display</button>
+</form>
+{{ message4 }}
