@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
       if (session) {
         this.token = session.token;
       }
+      // window.alert(this.token);
     });
   }
   sidebarOpen() {

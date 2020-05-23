@@ -10,6 +10,9 @@ import { Observable, Subject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 const jwt = new JwtHelperService();
 
+// moment
+import * as moment from 'moment';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -38,5 +41,10 @@ export class SessionService {
     this.session.token = localStorage.getItem('app-auth');
     this.session.decodedToken = JSON.parse(localStorage.getItem('app-meta'));
     return this.session;
+  }
+
+  isSessionValid(): boolean {
+    this.session.decodedToken = JSON.parse(localStorage.getItem('app-meta'));
+    return moment().isBefore(moment.unix(this.session.decodedToken.exp));
   }
 }

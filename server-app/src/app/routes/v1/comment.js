@@ -10,7 +10,7 @@ const AuthCtrl = require('./../../controllers/auth-ctrl')
 router.post('/', AuthCtrl.authMiddleware, (req, res) => {
   let comment = new Comment()
   comment.content = req.body.content
-  const now = moment().unix()
+  const now = new Date().getTime()
   comment.regDatetime = now
   comment.modDatetime = now
   comment.user.userId = req.body.user._id
@@ -92,7 +92,7 @@ router.put('/:id', AuthCtrl.authMiddleware, (req, res) => {
         restOutDto = new RestOutDto(null, error)
         return res.status(304).json(restOutDto)
       } else {
-        const now = moment().unix()
+        const now = new Date().getTime()
         comment.modDatetime = now
         console.log(comment)
         comment.save((err) => {
@@ -102,7 +102,7 @@ router.put('/:id', AuthCtrl.authMiddleware, (req, res) => {
             return res.status(500).json(restOutDto)
           } else {
             error = new ErrorModel(null, null, null)
-            restOutDto = new RestOutDto(null, error)
+            restOutDto = new RestOutDto(comment, error)
             return res.status(200).json(restOutDto)
           }
         })

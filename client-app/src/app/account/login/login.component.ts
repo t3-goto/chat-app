@@ -47,8 +47,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // validation
+  private validateForm(): string {
+    return null;
+  }
+
   // onClick login
   loginByEmail(): void {
+    // validation
+    this.message = this.validateForm();
+    if (this.message) {
+      return;
+    }
     const url = config.apiUrlLogin;
     const body = {
       email: this.loginForm.value.email,
@@ -60,7 +70,7 @@ export class LoginComponent implements OnInit {
       .post(restInDto)
       .subscribe((httpResponse: HttpResponse<RestOutDto>) => {
         this.sessionService.setSession(httpResponse.body.data.token);
-        this.router.navigate(['/chat']);
+        this.router.navigate(['/chat/room']);
       });
   }
 
