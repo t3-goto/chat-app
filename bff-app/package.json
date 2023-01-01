@@ -48,7 +48,7 @@
     "cross-env": "^7.0.2",
     "prettier": "2.0.5",
     "ts-node-dev": "^1.0.0-pre.44",
-    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths": "^3.10.1",
     "tslib": "^2.0.0",
     "tslint": "^6.1.2",
     "tslint-config-airbnb": "^5.11.2",
